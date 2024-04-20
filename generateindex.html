@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routine Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .task-timer {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Routine Generator</h2>
+        <p>Answer the following questions to generate your personalized routine:</p>
+        <form id="routineForm">
+            <label for="workoutRegularly">Q1. Do you workout regularly?</label>
+            <select name="workoutRegularly" id="workoutRegularly">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <div id="workoutDurationDiv" style="display: none;">
+                <label for="workoutDuration">How many minutes or hours do you work out?</label>
+                <input type="number" name="workoutDuration" id="workoutDuration" min="0" step="30" placeholder="Enter duration in minutes"><br><br>
+                <div id="workoutTimer" class="task-timer"></div>
+            </div>
+
+            <label for="studyHours">Q2. How many hours do you study?</label>
+            <input type="number" name="studyHours" id="studyHours" min="0" step="0.5" placeholder="Enter hours"><br><br>
+
+            <label for="hobbies">Q3. What are your hobbies?</label>
+            <input type="text" name="hobbies" id="hobbies" placeholder="Enter your hobbies"><br><br>
+
+            <label for="skincareRoutine">Q4. Do you want to follow a skincare routine?</label>
+            <select name="skincareRoutine" id="skincareRoutine">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <div id="skincareQuestionDiv" style="display: none;">
+                <label for="skincareQuestion">Please provide details about your skincare routine:</label>
+                <input type="text" name="skincareQuestion" id="skincareQuestion" placeholder="Enter your skincare routine"><br><br>
+            </div>
+
+            <label for="waterIntake">Q5. How many glasses of water do you drink?</label>
+            <input type="number" name="waterIntake" id="waterIntake" min="0" step="1" placeholder="Enter number of glasses"><br><br>
+
+            <label for="readBooks">Q6. Do you read books?</label>
+            <select name="readBooks" id="readBooks">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br><br>
+
+            <div id="readingDurationDiv" style="display: none;">
+                <label for="readingDuration">How many minutes or hours do you read?</label>
+                <input type="number" name="readingDuration" id="readingDuration" min="0" step="30" placeholder="Enter duration in minutes"><br><br>
+                <div id="readingTimer" class="task-timer"></div>
+            </div>
+
+            <button type="button" onclick="generateRoutine()">Generate Routine</button>
+        </form>
+
+        <div id="generatedRoutine"></div>
+    </div>
+
+   
+</body>
+</html>
